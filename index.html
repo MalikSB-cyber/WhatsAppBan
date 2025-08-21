@@ -99,7 +99,7 @@
   <h1>SBL BANNED</h1>
   <h2>WELCOME TO SBL HACKER TOOLKIT</h2>
 
-  <!-- First Number -->
+  <!-- First Number (Unban Request) -->
   <div class="input-row">
     <div class="input-box">
       <span>+92</span>
@@ -110,9 +110,9 @@
       <div class="underline full-line"></div>
     </div>
   </div>
-  <button onclick="sendReport('number1')">Unban</button>
+  <button onclick="sendUnban('number1')">Unban</button>
 
-  <!-- Second Number -->
+  <!-- Second Number (Illegal Activity Report) -->
   <div class="input-row">
     <div class="input-box">
       <span>+92</span>
@@ -123,14 +123,15 @@
       <div class="underline full-line"></div>
     </div>
   </div>
-  <button onclick="sendReport('number2')">Unban2</button>
+  <button onclick="sendBan('number2')">Ban</button>
 
   <div class="footer">
     Credit by : Maliksameer
   </div>
 
   <script>
-    function sendReport(id) {
+    // Function for unban request
+    function sendUnban(id) {
       let number = document.getElementById(id).value.trim();
       if (number === "") {
         alert("Please enter your WhatsApp number.");
@@ -144,8 +145,25 @@
         "Kindly review my account and unban it if possible.%0D%0A%0D%0A" +
         "My WhatsApp number: " + fullNumber + "%0D%0A%0D%0A" +
         "I rely on WhatsApp to stay connected with my family, friends, and work, so I would really appreciate your help in restoring my account.%0D%0A%0D%0A" +
-        "Thank you for your time and support.%0D%0A%0D%0A" +
-        "Regards,%0D%0A";
+        "Thank you for your time and support.";
+      let mailto = "mailto:support@whatsapp.com?subject=" + encodeURIComponent(subject) + "&body=" + body;
+      window.location.href = mailto;
+    }
+
+    // Function for illegal activity report (Arabic)
+    function sendBan(id) {
+      let number = document.getElementById(id).value.trim();
+      if (number === "") {
+        alert("الرجاء إدخال الرقم الذي تريد التبليغ عنه.");
+        return;
+      }
+      let fullNumber = "+92" + number;
+      let subject = "بلاغ عاجل: حساب واتساب متورط في أنشطة غير قانونية";
+      let body = "مرحباً فريق دعم واتساب،%0D%0A%0D%0A" +
+        "أرغب في التبليغ بشكل عاجل عن رقم واتساب يقوم بأنشطة غير قانونية وضارة. هذا المستخدم يروّج لشروحات اختراق، وينشئ مجموعات يتم فيها مشاركة محتويات إباحية وغير لائقة، وتوزيع مقاطع فيديو صريحة، وهو ما يعد انتهاكاً لشروط خدمة واتساب وإرشادات المجتمع.%0D%0A%0D%0A" +
+        "الرقم هو: " + fullNumber + "%0D%0A%0D%0A" +
+        "تعتبر هذه الأفعال خطيرة للغاية، مسيئة، وقد تضر بالمستخدمين أو تضللهم. أرجو منكم التحقيق الفوري في هذا الحساب واتخاذ إجراء صارم يشمل حظر الحساب نهائياً لمنع المزيد من الإساءة.%0D%0A%0D%0A" +
+        "شكراً جزيلاً لاهتمامكم بهذا الموضوع.";
       let mailto = "mailto:support@whatsapp.com?subject=" + encodeURIComponent(subject) + "&body=" + body;
       window.location.href = mailto;
     }
