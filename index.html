@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SBL BANNED - WhatsApp Reporter</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('fb40ae3212e78ae6bf927219a801045d.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 40px;
+      color: #fff;
+      text-shadow: 2px 2px 5px #000;
+    }
+    h2 {
+      font-size: 16px;
+      font-style: italic;
+      font-weight: 600;
+      margin-bottom: 40px;
+      color: #ddd;
+      text-shadow: 1px 1px 3px #000;
+    }
+    .input-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin: 25px auto;
+      gap: 15px;
+    }
+    .input-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .input-box span {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+    }
+    .input-box input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 20px;
+      text-align: center;
+      width: 120px;
+      margin-top: 5px;
+    }
+    .underline {
+      height: 2px;
+      background: yellow;
+      margin-top: 3px;
+    }
+    .small-line {
+      width: 40px;   /* sirf +92 ke niche */
+    }
+    .full-line {
+      width: 100%;   /* input ke niche full */
+    }
+    button {
+      background: rgba(255, 255, 0, 0.8);
+      color: #000;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      padding: 12px 30px;
+      margin: 25px 0;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.6);
+    }
+    button:hover {
+      background: #ffcc00;
+    }
+    .footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: yellow;
+      text-shadow: 1px 1px 3px #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>SBL BANNED</h1>
+  <h2>WELCOME TO SBL HACKER TOOLKIT</h2>
+
+  <!-- First Number -->
+  <div class="input-row">
+    <div class="input-box">
+      <span>+92</span>
+      <div class="underline small-line"></div>
+    </div>
+    <div class="input-box">
+      <input type="text" id="number1" placeholder="3xxxxxxxxx">
+      <div class="underline full-line"></div>
+    </div>
+  </div>
+  <button onclick="sendReport('number1')">Unban</button>
+
+  <!-- Second Number -->
+  <div class="input-row">
+    <div class="input-box">
+      <span>+92</span>
+      <div class="underline small-line"></div>
+    </div>
+    <div class="input-box">
+      <input type="text" id="number2" placeholder="3xxxxxxxxx">
+      <div class="underline full-line"></div>
+    </div>
+  </div>
+  <button onclick="sendReport('number2')">Unban2</button>
+
+  <div class="footer">
+    Credit by : Maliksameer
+  </div>
+
+  <script>
+    function sendReport(id) {
+      let number = document.getElementById(id).value.trim();
+      if (number === "") {
+        alert("Please enter your WhatsApp number.");
+        return;
+      }
+      let fullNumber = "+92" + number;
+      let subject = "Request to Review Banned Number";
+      let body = "Hello WhatsApp Support Team,%0D%0A%0D%0A" +
+        "My WhatsApp account has been banned, and I believe this may have been a mistake.%0D%0A" +
+        "I always follow the WhatsApp Terms of Service and Community Guidelines.%0D%0A" +
+        "Kindly review my account and unban it if possible.%0D%0A%0D%0A" +
+        "My WhatsApp number: " + fullNumber + "%0D%0A%0D%0A" +
+        "I rely on WhatsApp to stay connected with my family, friends, and work, so I would really appreciate your help in restoring my account.%0D%0A%0D%0A" +
+        "Thank you for your time and support.%0D%0A%0D%0A" +
+        "Regards,%0D%0A";
+      let mailto = "mailto:support@whatsapp.com?subject=" + encodeURIComponent(subject) + "&body=" + body;
+      window.location.href = mailto;
+    }
+  </script>
+</body>
+</html>
